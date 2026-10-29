@@ -1,0 +1,16 @@
+name: Simple CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v6
+
+      - name: Check file exists
+        run: test -f README.md
